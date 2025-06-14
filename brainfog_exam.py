@@ -10,8 +10,6 @@ class WorkingMemory:
     def add(self, sentence):
         # エネルギーを消費
         self.energy -= 1
-        print(self.energy)
-
         
         is_success = random.random() < self.energy / 100
         
@@ -30,7 +28,7 @@ sentences = [
 ]
 
 for sentence in sentences:
-    print(sentence, end=' ')
+    print(sentence)
     while True:
         try:
             # ワーキングメモリに文の一部を追加する
@@ -38,6 +36,6 @@ for sentence in sentences:
             # 成功したら次へ
             break
         except Exception as e:
-            print(e)
+            print("エラー:", e)
             # ワーキングメモリへの追加に失敗した場合は再試行
             continue
